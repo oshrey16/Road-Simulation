@@ -1,0 +1,49 @@
+package components;
+
+import utilities.Timer;
+import utilities.Utilities;
+import java.util.ArrayList;
+
+
+public class Driving implements Utilities, Timer {
+    private Map map;
+    private ArrayList<Vehicle> vehicles;        //Vehicles in driving
+    private int drivingTime;            //timer from start driving/beats
+    private ArrayList<Timer> allTimedElements;      //all elements affected by beats time(vehicles and junctions)
+
+    //Constructors:
+
+    /**
+     * Driving Constructor:
+     * build Driving Object - build Map with number of junctions.
+     * set number of vehicles.
+     * set all parameters
+     * @param numOfJunctions - number of Junctions
+     * @param numOfVehicles - number of Vehicles
+     */
+    Driving(int numOfJunctions, int numOfVehicles) {
+        map = new Map(numOfJunctions);
+        for (int i = 0; i < numOfVehicles; i++)
+            vehicles.add(new Vehicle());
+        drivingTime = 0;
+        allTimedElements = new ArrayList<Timer>();
+    }
+
+    //Methods:
+    /**
+     * this function make number of beats of game.
+     * @param numOfTurns - number of beats
+     */
+    public void drive(int numOfTurns){
+        for(int i=0;i<numOfTurns;i++)
+            incrementDrivingTime();
+    }
+
+    /**
+     * this function increase time and movements for all elements (vehicles and junctions)
+     */
+    @Override
+    public void incrementDrivingTime() {
+        //TODO
+    }
+}
